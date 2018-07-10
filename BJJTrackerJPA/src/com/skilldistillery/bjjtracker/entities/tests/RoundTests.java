@@ -46,7 +46,8 @@ class RoundTests {
 	
 	@Test
 	void test_round_mapping() {
-		assertEquals("Daniel Calvert", r.getOpponent());
+		assertEquals("Daniel Calvert", r.getOpponentName());
+		assertEquals("Purple", r.getOpponentRank());
 	}
 	
 	

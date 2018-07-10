@@ -11,40 +11,37 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.skilldistillery.bjjtracker.data.RoundDAO;
 import com.skilldistillery.bjjtracker.entities.Round;
+import com.skilldistillery.bjjtracker.services.RoundService;
 
 @RestController
 @RequestMapping("api")
 public class RoundController {
 	@Autowired
-	RoundDAO roundDAO;
+	RoundService service;
 	
 	@RequestMapping(path="rounds", method=RequestMethod.GET)
 	public List<Round> index(){
-	  return roundDAO.index();
+	  return service.index();
 	}
 	
 	@RequestMapping(path = "rounds/{id}", method = RequestMethod.GET)
 	public Round show(@PathVariable int id) {
-		return roundDAO.show(id);
+		return service.show(id);
 	}
 	
 	@RequestMapping(path = "rounds", method = RequestMethod.POST)
 	public Round create(@RequestBody Round round) {
-		return roundDAO.create(round);
+		return service.create(round);
 	}
 	
-	@RequestMapping(path = "rounds/{id}", method = RequestMethod.PUT)
-	public Round replace(@RequestBody Round round, @PathVariable int id) {
-		return roundDAO.replace(id, round);
-	}
 	
 	@RequestMapping(path = "rounds/{id}", method = RequestMethod.PATCH)
 	public Round edit(@RequestBody Round round, @PathVariable int id) {
-		return roundDAO.edit(id, round);
+		return service.edit(id, round);
 	}
 	
 	@RequestMapping(path = "rounds/{id}", method = RequestMethod.DELETE)
-	public Boolean delete(@PathVariable int id) {
-		return roundDAO.delete(id);
+	public void delete(@PathVariable int id) {
+		service.delete(id);
 	}
 }

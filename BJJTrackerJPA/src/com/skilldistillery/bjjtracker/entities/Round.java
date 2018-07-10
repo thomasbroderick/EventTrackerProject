@@ -15,49 +15,68 @@ public class Round {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String opponent;
+	@Column(name = "opponent_name")
+	private String opponentName;
+	@Column(name = "opponent_rank")
+	private String opponentRank;
 	@CreationTimestamp
 	private Date date;
-	@Column(name="points_scored")
+	@Column(name = "points_scored")
 	private int pointsScored;
 	private String result;
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getOpponent() {
-		return opponent;
+
+	public String getOpponentName() {
+		return opponentName;
 	}
-	public void setOpponent(String opponent) {
-		this.opponent = opponent;
+
+	public void setOpponentName(String opponent) {
+		this.opponentName = opponent;
 	}
+
+	public String getOpponentRank() {
+		return opponentRank;
+	}
+
+	public void setOpponentRank(String opponentRank) {
+		this.opponentRank = opponentRank;
+	}
+
 	public Date getDate() {
 		return date;
 	}
+
 	public void setDate(Date date) {
 		this.date = date;
 	}
+
 	public int getPointsScored() {
 		return pointsScored;
 	}
+
 	public void setPointsScored(int pointsScored) {
 		this.pointsScored = pointsScored;
 	}
+
 	public String getResult() {
 		return result;
 	}
+
 	public void setResult(String result) {
 		this.result = result;
 	}
+
 	@Override
 	public String toString() {
-		return "Round [id=" + id + ", opponent=" + opponent + ", date=" + date + ", pointsScored=" + pointsScored
+		return "Round [id=" + id + ", opponent=" + opponentName + ", date=" + date + ", pointsScored=" + pointsScored
 				+ ", result=" + result + "]";
 	}
-	
-	
-	
-	
+
 }

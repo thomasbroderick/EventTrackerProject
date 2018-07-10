@@ -43,8 +43,8 @@ public class RoundDAOImpl implements RoundDAO {
 		Round managed = em.find(Round.class, id);
 		try {
 			Round mapped = round;
-			if (mapped.getOpponent() != null)
-				managed.setOpponent(mapped.getOpponent());
+			if (mapped.getOpponentName() != null)
+				managed.setOpponentName(mapped.getOpponentName());
 			if (mapped.getDate() != null)
 				managed.setDate(mapped.getDate());
 			if (mapped.getPointsScored() != 0)
@@ -62,7 +62,7 @@ public class RoundDAOImpl implements RoundDAO {
 		Round managed = em.find(Round.class, id);
 		try {
 			Round mapped = round;
-			managed.setOpponent(mapped.getOpponent());
+			managed.setOpponentName(mapped.getOpponentName());
 			managed.setDate(mapped.getDate());
 			managed.setPointsScored(mapped.getPointsScored());
 			managed.setResult(mapped.getResult());
