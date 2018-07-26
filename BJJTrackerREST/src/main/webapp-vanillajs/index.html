@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BJJ Round Tracker</title>
+<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+	<h1>Welcome to BJJ Round Tracker</h1>
+
+	<h2>Round Information</h2>
+	<div id="roundTable"></div>
+	<div id="roundDetails"></div>
+	<h2>Enter a New Round</h2>
+	<form name="newRoundForm">
+		<input type="text" name="opponentName" value="Opponent Name">
+		<input type="text" name="opponentRank" value="Opponent Rank">
+		<input type="date" name="date" id="datePicker"> <input
+			type="number" name="pointsScored" value="Points Scored"> <input
+			type="text" name="result" value="Result"> <input
+			type="submit" name="roundSubmit">
+	</form>
+	<h2>Additional Information</h2>
+	<div id="analysis">
+	</div>
+	<button type="button" id="dataAnalysis">Analyze Data</button>
+</body>
+</html>
